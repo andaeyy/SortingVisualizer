@@ -39,13 +39,13 @@ public class ShellSort implements SortAlgorithm {
       }
       h = (h-1)/3;
       while (h >= 1){
-          for (int i = 0; i < arr.size() % h; i++){
+          for (int i = 0; i < h; i++){
               for (int j = i; j < arr.size(); j += h){
                   int index = j;
                   while (index>=h){
                       if (arr.less(index,index-h)){
-                          arr.swap(j,j-h);
-                          j-=h;
+                          arr.swap(index,index-h);
+                          index-=h;
                       }
                       else break;
                   }
